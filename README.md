@@ -47,5 +47,5 @@ Right now, some marker data will still be a bit wonky, as I wrote the scraping f
 
 I'd also like to include a longer timeframe, or at least cases that are still open.
 
-I don't know if anyone will see this, but if you do, thanks for reading!
+I don't know if anyone will see this, but if you read to this point, thanks!
 
