@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Documentation - NLRB Locations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid #3768ac;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #3768ac;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .data-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .data-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .nav-links a:hover {
+            background-color: #5a6268;
+        }
+        
+        .nav-links a.primary {
+            background-color: #3768ac;
+        }
+        
+        .nav-links a.primary:hover {
+            background-color: #3768ac;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .data-table {
+                font-size: 0.8rem;
+            }
+            
+            .nav-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Documentation</h1>
+            <p class="subtitle">Methodology for NLRB Case Locations data</p>
+        </header>
+
+        <div class="nav-links">
+            <a href="index.html" class="primary">← Back to Map</a>
+        </div>
+
+        <div><br></div>
+        
+        <div class="content">
+            <h2>Data Collection</h2>
+            <ul>
+                <li><strong><a target="_blank" rel="noopener noreferrer" href="https://nlrbresearch.com/">NLRB Research</a></strong></li>
+            </ul>
+            <p>
+                Initial NLRB Data are collected from NLRB Research,
+                which hosts a regularly updated database of NLRB documents. Data visualized only include documents corresponding to a known case number,
+                with cases that are currently open (e.g., not closed). As of this version, only cases with recent activity in 2024 or 2025 are included.
+            </p>
+            <ul>
+                <li><strong><a target="_blank" rel="noopener noreferrer" href="https://www.nlrb.gov/">NLRB.gov</a></strong></li>
+            </ul>
+            <p>
+                Further data collection on cases were taken from the official NLRB case pages. From these pages, information like a
+                case's status, the NLRB region assigned, and allegations were collected.
+            </p>
+            <ul>
+                <li><strong><a target="_blank" rel="noopener noreferrer" href="https://nominatim.org/">Nominatim</a></strong></li>
+            </ul>
+            <p>
+                To mark each case on the map, case locations (city, state) were queried using Nominatim, and longitudes and 
+                latitudes were collected (via <a target="_blank" rel="noopener noreferrer" href="https://geopy.readthedocs.io/en/stable/">Geopy</a>).
+            </p>
+            
+            <h2>Marker Structure</h2>
+            <p>Each case/marker on the map has the following (optional) attributes</p>
+            
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Name</strong></td>
+                        <td>Name of the case</td>
+                        <td>Tim Force Tin Shop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Location</strong></td>
+                        <td>Filing Location</td>
+                        <td>Casper, WY</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assigned Region</tstrong></td>
+                        <td>Official NLRB assigned region</td>
+                        <td>Region 27, Denver, Colorado</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status</tstrong></td>
+                        <td>Case status (necessarily "Open" for now)</td>
+                        <td>"Open"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Filed</tstrong></td>
+                        <td>Initial date filed</td>
+                        <td>07/25/2023</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Activity</tstrong></td>
+                        <td>Most recent activity (based on document issued)</td>
+                        <td>03/28/2025</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Document Type</tstrong></td>
+                        <td>Type of document</td>
+                        <td>ALJ Decision</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Case Number</tstrong></td>
+                        <td>Case number</td>
+                        <td>27-CA-322370</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Citation</tstrong></td>
+                        <td>Citation</td>
+                        <td>JD(SF)-07-25</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Circuit</tstrong></td>
+                        <td>Circuit Court</td>
+                        <td>DC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ALJ</tstrong></td>
+                        <td>Administrative Law Judge</td>
+                        <td>John Giannopoulos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Allegations</tstrong></td>
+                        <td>Case allegations</td>
+                        <td>- 8(a)(5) Refusal to Recognize<br>- 8(a)(5) Refusal to Bargain/Bad Faith Bargaining (incl'g surface bargaining/direct dealing)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                Additionally, each case will have links to read the full document, or an AI summary of the document; these fields link to 
+                taken from NLRB Research.
+            </p>
+            
+            <h2>Map Creation</h2>
+            <p>
+            The main map is made using <a target="_blank" rel="noopener noreferrer" href="https://python-visualization.github.io/folium/latest/">Folium</a>,
+             a Python library that uses Leaflet.js to easily create interactive and highly customisable maps. I highly recommend using it. It's very easy to
+             add features like a search bar, filter tags, and you have near full control over popup labels.
+            </p>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="primary">← Back to Map</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="mailto:ravanhawrami@gmail.com" class="primary">Contact Me</a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 NLRB Locations</p>
+        </footer>
+    </div>
+</body>
+</html>

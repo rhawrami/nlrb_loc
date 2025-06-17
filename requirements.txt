@@ -2,3 +2,5 @@ folium
 requests
 bs4
 geopy
+aiohttp
+lxml

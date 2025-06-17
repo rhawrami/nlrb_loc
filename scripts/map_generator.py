@@ -120,14 +120,14 @@ class NlRbMap:
             mkr.add_to(fg)
 
 def main(fname=''):
-    nlrbmap = NlRbMap(fpath='data/final_2025_data.json')
+    nlrbmap = NlRbMap(fpath='data/map_for_dat_2024_and_2025.json')
     nlrbmap.build_map()
     nlrbmap.cases_map.save(fname)
     nlrbmap.cases_map.show_in_browser()
 
 
 if __name__=='__main__':
-    main('NLRB_2025_map.html')
+    main('docs/NLRB_map.html')
 
         
     
