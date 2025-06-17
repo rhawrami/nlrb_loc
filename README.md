@@ -20,9 +20,11 @@ For the map, I use [Folium](https://python-visualization.github.io/folium/latest
 
 Enough about the process, let's get to the map.
 
-## The Map
+## The Page & Map 
 
-The map ([LINK HERE](https://rhawrami.github.io/nlrb_loc/docs/NLRB_map.html)) is public, and should be fairly straightforward. Still, I'll give a brief overview.
+I embedded the map in a simple page ([CLICK HERE](https://rhawrami.github.io/nlrb_loc/docs/index.html)), with similar information included there as included here.
+
+To just view the map ([LINK HERE](https://rhawrami.github.io/nlrb_loc/docs/NLRB_map.html)), it's public, and should be fairly straightforward. Still, I'll give a brief overview.
 
 ![map_preview](img/nlrb_map.png)
 
@@ -42,11 +44,4 @@ You can also search in the top left by the case name and/or case location (e.g.,
 
 ![search_preview](img/map_search.png)
 
-## Next Steps
-
-Right now, some marker data will still be a bit wonky, as I wrote the scraping fairly quickly and didn't cover all cases.
-
-I'd also like to include a longer timeframe, or at least cases that are still open.
-
-I don't know if anyone will see this, but if you read to this point, thanks!
 

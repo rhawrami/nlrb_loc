@@ -120,31 +120,22 @@
         
         .nav-links {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
         
         .nav-links a {
             display: inline-block;
             padding: 12px 24px;
-            background-color: #6c757d;
+            background-color: #3768ac;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 500;
             transition: background-color 0.3s ease;
-            margin: 0 10px;
         }
         
         .nav-links a:hover {
-            background-color: #5a6268;
-        }
-        
-        .nav-links a.primary {
-            background-color: #3768ac;
-        }
-        
-        .nav-links a.primary:hover {
-            background-color: #3768ac;
+            background-color: #0056b3;
         }
         
         footer {
@@ -305,20 +296,20 @@
             <p>
             The main map is made using <a target="_blank" rel="noopener noreferrer" href="https://python-visualization.github.io/folium/latest/">Folium</a>,
              a Python library that uses Leaflet.js to easily create interactive and highly customisable maps. I highly recommend using it. It's very easy to
-             add features like a search bar, filter tags, and you have near full control over popup labels.
+             add features like a search bar and filter tags, and you have near full control over popup labels.
             </p>
         </div>
         
         <div class="nav-links">
             <a href="index.html" class="primary">← Back to Map</a>
         </div>
-
-        <div class="nav-links">
-            <a href="mailto:ravanhawrami@gmail.com" class="primary">Contact Me</a>
-        </div>
         
         <footer>
-            <p>&copy; 2025 NLRB Locations</p>
+            <div class="nav-links">
+                <a href="mailto:ravanhawrami@gmail.com" class="primary">Contact Me</a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/rhawrami/nlrb_loc" class="primary">GitHub Repo</a>
+            </div>
+            <p>&copy; 2025 NLRB Case Locations</p>
         </footer>
     </div>
 </body>

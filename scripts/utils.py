@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import random
+import re
+from datetime import datetime
 
 AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -49,3 +51,14 @@ def nlrb_num_iter(year=2025):
     else:
         num_iter = 1
     return num_iter
+
+def add_time_to_html(html_path):
+    '''inserts update time into html'''
+    with open(html_path,'r') as htpath:
+        s = htpath.read()
+    dtoday = datetime.today().strftime('%m/%d/%Y')
+    s_updated = re.sub(r'Last Updated: ..\/..\/....', f'Last Updated: {dtoday}',s)
+    with open(html_path,'w') as htpath:
+        htpath.write(s_updated)
+        
+        

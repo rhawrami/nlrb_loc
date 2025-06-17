@@ -2,6 +2,7 @@ import folium
 import folium.plugins
 import json
 import random
+from utils import add_time_to_html
 
 '''
 POPUP TEMPLATE
@@ -119,15 +120,15 @@ class NlRbMap:
             )
             mkr.add_to(fg)
 
-def main(fname=''):
+def main(fname='docs/NLRB_map.html'):
     nlrbmap = NlRbMap(fpath='data/map_for_dat_2024_and_2025.json')
     nlrbmap.build_map()
     nlrbmap.cases_map.save(fname)
-    nlrbmap.cases_map.show_in_browser()
+    add_time_to_html('docs/index.html')
 
 
 if __name__=='__main__':
-    main('docs/NLRB_map.html')
+    main()
 
         
     
