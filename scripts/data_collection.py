@@ -157,7 +157,7 @@ async def get_one_case(case,session,geolocator,semaphore,idx):
                         )
                         if location:
                             new_case_dat['lat_lon'] = (location.latitude, location.longitude)
-                            print(f'Processed: {new_case_dat['Name'][0]} (task #{idx})')
+                            print(f"Processed: {new_case_dat['Name'][0]} (task #{idx})")
                         else:
                             new_case_dat['lat_lon'] = None
                             print(f"No location found for: {new_case_dat['Name'][0]} {case['Location']}")
