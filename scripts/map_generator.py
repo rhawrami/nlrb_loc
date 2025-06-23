@@ -87,28 +87,40 @@ class NlRbMap:
             else:
                 case_allegations =  ' <i>NA</i>'
 
+            case_name = case['Name'][0]
+            case_date = case['Date']
+            case_location = case['Location']
+            case_link = case['Name'][1]
+            case_status = case['Status']
+            case_ALJ_name = case['ALJ'][0]
+            case_ALJ_link = case['ALJ'][1]
+            case_number_name = case['Citation'][0]
+            case_number_link = case['Citation'][1]
+            case_citation_name = case['Citation'][0]
+            case_citation_link = case['Citation'][1]
+            case_summary_link = case['Summary'][1]
 
             mkr_popup = POPUP_TEMPLATE.format(
-                casename = f'<a target="_blank" rel="noopener noreferrer" href="{case['Name'][1]}">{case['Name'][0]}</a>',
+                casename = f'<a target="_blank" rel="noopener noreferrer" href="{case_link}">{case_name}</a>',
                 location = case['Location'],
                 regionassigned = case['Region Assigned'],
                 doctype = case['Type'],
-                status = f'<b>{case['Status']}</b>',
+                status = f"<b>{case_status}</b>",
                 datefiled = case['Date Filed'],
                 recentactivity = case['Date'],
-                alj = f'<a target="_blank" rel="noopener noreferrer" href="{case['ALJ'][1]}">{case['ALJ'][0]}</a>' if not isinstance(case['ALJ'],str) else '<i>NA</i>',
-                casenumber = f'<a target="_blank" rel="noopener noreferrer" href="{case['CaseNumber'][1]}">{case['CaseNumber'][0]}</a>',
-                citation = f'<a target="_blank" rel="noopener noreferrer" href="{case['Citation'][1]}">{case['Citation'][0]}</a>' if not isinstance(case['Citation'],str) else '<i>NA</i>',
+                alj = f'<a target="_blank" rel="noopener noreferrer" href="{case_ALJ_link}">{case_ALJ_name}</a>' if not isinstance(case['ALJ'],str) else '<i>NA</i>',
+                casenumber = f'<a target="_blank" rel="noopener noreferrer" href="{case_number_link}">{case_number_name}</a>',
+                citation = f'<a target="_blank" rel="noopener noreferrer" href="{case_citation_link}">{case_citation_name}</a>' if not isinstance(case['Citation'],str) else '<i>NA</i>',
                 circuit = case['Circuit'] if not isinstance(case['Circuit'],str) else '<i>NA</i>',
                 allegations = case_allegations,
-                fulldoc = f'<a target="_blank" rel="noopener noreferrer" href="{case['Name'][1]}">Read the full document</a>',
-                aisummary = f'<a target="_blank" rel="noopener noreferrer" href="{case['Summary'][1]}">Read the AI summary</a>' if not isinstance(case['Summary'],str) else '<i>NA</i>'
+                fulldoc = f'<a target="_blank" rel="noopener noreferrer" href="{case_link}">Read the full document</a>',
+                aisummary = f'<a target="_blank" rel="noopener noreferrer" href="{case_summary_link}">Read the AI summary</a>' if not isinstance(case['Summary'],str) else '<i>NA</i>'
             )
             mkr = folium.Marker(
                 location=[case['lat_lon'][0] + random.uniform(-.03,.03), # add jitter in case that two cases have same addr
                           case['lat_lon'][1] + random.uniform(-.03,.03)],
                 popup=mkr_popup,
-                tooltip=folium.Tooltip(text=f'<b>{case['Name'][0]}</b><br>({case['Date']})',
+                tooltip=folium.Tooltip(text=f"<b>{case_name}</b><br>({case_date})",
                                        style='color:#565656;font-family:Arial, sans-serif;font-size:13px;text-align:center;'),
                 icon=folium.plugins.BeautifyIcon(icon_shape='marker',
                                        icon='institution',
@@ -116,7 +128,7 @@ class NlRbMap:
                                        border_width=0,
                                        background_color="#3768aca6"),
                 tags=[case['Type']],
-                title=f'{case['Name'][0]} ({case['Location']})'
+                title=f'{case_name} ({case_location})'
             )
             mkr.add_to(fg)
 
