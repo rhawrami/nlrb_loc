@@ -26,6 +26,7 @@ jobs:
     - name: Run scripts
       run: |
         python scripts/data_collection.py  
+        python scripts/map_generator.py
     
     - name: Commit and push 
       run: |
