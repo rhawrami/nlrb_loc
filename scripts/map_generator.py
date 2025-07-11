@@ -86,19 +86,27 @@ class NlRbMap:
                     case_allegations = '<br> - ' + case['Allegations'][0]
             else:
                 case_allegations =  ' <i>NA</i>'
-
             case_name = case['Name'][0]
             case_date = case['Date']
             case_location = case['Location']
             case_link = case['Name'][1]
             case_status = case['Status']
-            case_ALJ_name = case['ALJ'][0]
-            case_ALJ_link = case['ALJ'][1]
-            case_number_name = case['Citation'][0]
-            case_number_link = case['Citation'][1]
-            case_citation_name = case['Citation'][0]
-            case_citation_link = case['Citation'][1]
-            case_summary_link = case['Summary'][1]
+            try:
+                case_ALJ_name = case['ALJ'][0]
+                case_ALJ_link = case['ALJ'][1]
+            except IndexError:
+                case_ALJ_name = case_ALJ_link = ''
+            try:
+                case_number_name = case['Citation'][0]
+                case_number_link = case['Citation'][1]
+            except IndexError:
+                case_number_name = case_number_link = ''
+            try:
+                case_citation_name = case['Citation'][0]
+                case_citation_link = case['Citation'][1]
+            except IndexError:
+                case_citation_name = case_citation_link = ''
+            case_summary_link = case['Summary'][1] if not isinstance(case['Summary'], str) else case['Summary']
 
             mkr_popup = POPUP_TEMPLATE.format(
                 casename = f'<a target="_blank" rel="noopener noreferrer" href="{case_link}">{case_name}</a>',

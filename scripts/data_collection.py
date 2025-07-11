@@ -222,9 +222,9 @@ async def main(yr=2025):
     strp_yr = re.sub(r'\, ','_and_',strp_yr)
     nlrb_datf = f'data/nlrb_{strp_yr}.json'
 
-    # print(f'\n-------NLRB_Research Collection for years {yr}-------')
-    # nlrb_to_json(yr, fpath=nlrb_datf)
-    # print(f'\n-------NLRB_Research Collection Completed-------')
+    print(f'\n-------NLRB_Research Collection for years {yr}-------')
+    nlrb_to_json(yr, fpath=nlrb_datf)
+    print(f'\n-------NLRB_Research Collection Completed-------')
 
     print(f'\n-------NLRB Case Collection for years {yr}-------')
     final_data = await nlrb_final_data(jsonpath=nlrb_datf, out_json=f'data/map_for_dat_{strp_yr}.json')
