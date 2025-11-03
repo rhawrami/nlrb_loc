@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e928582dd66bdc3336da6ed8fa8043a9 {
+                #map_f80c1291edc0e79021a405d05e469a28 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -74,14 +74,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_e928582dd66bdc3336da6ed8fa8043a9" ></div>
+            <div class="folium-map" id="map_f80c1291edc0e79021a405d05e469a28" ></div>
         
 </body>
 <script>
     
     
-            var map_e928582dd66bdc3336da6ed8fa8043a9 = L.map(
-                "map_e928582dd66bdc3336da6ed8fa8043a9",
+            var map_f80c1291edc0e79021a405d05e469a28 = L.map(
+                "map_f80c1291edc0e79021a405d05e469a28",
                 {
                     center: [39.8097343, -98.5556199],
                     crs: L.CRS.EPSG3857,
@@ -93,13 +93,13 @@
 
                 }
             );
-            L.control.zoom( { position: "topright" } ).addTo(map_e928582dd66bdc3336da6ed8fa8043a9);
+            L.control.zoom( { position: "topright" } ).addTo(map_f80c1291edc0e79021a405d05e469a28);
 
             
 
         
     
-            var tile_layer_b821ebc3d9ace08ee418daa1fa718a97 = L.tileLayer(
+            var tile_layer_fa29ace754b63cd86cd606b1a61cb8be = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -116,7 +116,7 @@
             );
         
     
-            tile_layer_b821ebc3d9ace08ee418daa1fa718a97.addTo(map_e928582dd66bdc3336da6ed8fa8043a9);
+            tile_layer_fa29ace754b63cd86cd606b1a61cb8be.addTo(map_f80c1291edc0e79021a405d05e469a28);
         
     
             L.control.fullscreen(
@@ -126,20 +126,20 @@
   "titleCancel": "Exit Full Screen",
   "forceSeparateButton": false,
 }
-            ).addTo(map_e928582dd66bdc3336da6ed8fa8043a9);
+            ).addTo(map_f80c1291edc0e79021a405d05e469a28);
         
     
-            var feature_group_cd1bc23a2b0b49f3a0508f9aa035e730 = L.featureGroup(
+            var feature_group_2610bfc537b70fd1d33d73953aa53ff2 = L.featureGroup(
                 {
 }
             );
         
     
-            feature_group_cd1bc23a2b0b49f3a0508f9aa035e730.addTo(map_e928582dd66bdc3336da6ed8fa8043a9);
+            feature_group_2610bfc537b70fd1d33d73953aa53ff2.addTo(map_f80c1291edc0e79021a405d05e469a28);
         
     
-            var feature_group_cd1bc23a2b0b49f3a0508f9aa035e730searchControl = new L.Control.Search({
-                layer: feature_group_cd1bc23a2b0b49f3a0508f9aa035e730,
+            var feature_group_2610bfc537b70fd1d33d73953aa53ff2searchControl = new L.Control.Search({
+                layer: feature_group_2610bfc537b70fd1d33d73953aa53ff2,
                 
                 propertyName: 'title',
                 
@@ -152,8 +152,8 @@
                 hideMarkerOnCollapse: true
             
                 });
-                feature_group_cd1bc23a2b0b49f3a0508f9aa035e730searchControl.on('search:locationfound', function(e) {
-                    feature_group_cd1bc23a2b0b49f3a0508f9aa035e730.setStyle(function(feature){
+                feature_group_2610bfc537b70fd1d33d73953aa53ff2searchControl.on('search:locationfound', function(e) {
+                    feature_group_2610bfc537b70fd1d33d73953aa53ff2.setStyle(function(feature){
                         return feature.properties.style
                     })
                     
@@ -164,16 +164,16 @@
                     if(e.layer._popup)
                         e.layer.openPopup();
                 })
-                feature_group_cd1bc23a2b0b49f3a0508f9aa035e730searchControl.on('search:collapsed', function(e) {
-                        feature_group_cd1bc23a2b0b49f3a0508f9aa035e730.setStyle(function(feature){
+                feature_group_2610bfc537b70fd1d33d73953aa53ff2searchControl.on('search:collapsed', function(e) {
+                        feature_group_2610bfc537b70fd1d33d73953aa53ff2.setStyle(function(feature){
                             return feature.properties.style
                     });
                 });
-            map_e928582dd66bdc3336da6ed8fa8043a9.addControl( feature_group_cd1bc23a2b0b49f3a0508f9aa035e730searchControl );
+            map_f80c1291edc0e79021a405d05e469a28.addControl( feature_group_2610bfc537b70fd1d33d73953aa53ff2searchControl );
 
         
     
-            var tag_filter_button_329f29167b379d0c6452df74aa7f9b21 = L.control.tagFilterButton(
+            var tag_filter_button_7c6c9bc9e118bb8f524ad9f780b6400c = L.control.tagFilterButton(
                 {
   "data": [
 "Published Board Decision",
@@ -195,7 +195,7 @@
   "filterOnEveryClick": true,
   "openPopupOnHover": false,
 }
-            ).addTo(map_e928582dd66bdc3336da6ed8fa8043a9);
+            ).addTo(map_f80c1291edc0e79021a405d05e469a28);
         
 </script>
 </html>
